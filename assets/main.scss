@@ -10,8 +10,8 @@
 
 $rs: 16px;
 
-$font-header: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-$font-body: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+$font-header: -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+$font-body: -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
 
 // Theme colors
 $aside-color: #578bce;        // Blue
@@ -123,7 +123,7 @@ body {
 }
 
 .blog-description {
-  font-size: $rs / 8 * 9;
+  font-size: calc($rs / 8 * 9);
   font-weight: 400;
   line-height: 1.5;
   padding: 0 ($rs * 2);
@@ -144,7 +144,7 @@ body {
 
   .blog-title {
     color: $dark-gray;
-    padding: ($rs * 5.25) $rs ($rs / 2);
+    padding: ($rs * 5.25) $rs calc($rs / 2);
   }
 
   .blog-description {
@@ -266,14 +266,14 @@ article {
 
   span {
     color: $meta-color;
-    font-size: $rs / 8 * 5;
+    font-size: calc($rs / 8 * 5);
     letter-spacing: 1px;
     text-transform: uppercase;
   }
 }
 
 .pagination {
-  font-size: $rs / 4 * 3;
+  font-size: calc($rs / 4 * 3);
   padding: ($rs * 3) 0 0;
   text-align: center;
 
@@ -289,8 +289,8 @@ article {
 
 .site-footer {
   color: $light-gray;
-  font-size: $rs / 4 * 3;
-  line-height: $rs * 1.1;
+  font-size: calc($rs / 4 * 3);
+  line-height: calc($rs * 1.1);
   margin: 0 auto;
   max-width: 640px;
   padding: ($rs * 3) 0;
