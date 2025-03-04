@@ -1,11 +1,16 @@
 <head>
   <meta charset="utf-8">
-  <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
+    <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
+    <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <title>
+    {% if page.title %}
+      {{ page.title }}
+    {% else %}
+      {{ site.title }}{% endif %}
+  </title>
   <meta name="description" content="{{ site.description }}" />
 
   <meta name="HandheldFriendly" content="True" />
@@ -18,6 +23,14 @@
   <link rel="shortcut icon" href="{{ "/favicon.ico" | prepend: site.baseurl }}">
   <script src="https://kit.fontawesome.com/18eb4057fc.js" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" type="text/css" media="screen" href="{{ "/assets/main.css"  | prepend: site.baseurl  }}" />
-  <link rel="stylesheet" type="text/css" media="print" href="{{ "/assets/print.css"  | prepend: site.baseurl  }}" />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    media="screen"
+    href="{{ "/assets/main.css"  | prepend: site.baseurl  }}" />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    media="print"
+    href="{{ "/assets/print.css"  | prepend: site.baseurl  }}" />
 </head>

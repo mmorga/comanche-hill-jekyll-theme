@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   {% include head.html %}
-  <body{% if page.itemtype %} itemscope itemtype="{{page.itemtype}}" {% endif %}>
+    <body
+    {% if page.itemtype %}
+    itemscope
+    itemtype="{{page.itemtype}}"
+    {% endif %}>
     {% include header.html %}
 
     <!-- content start -->
@@ -10,7 +14,7 @@
       <div class="wrapper">
         {{ content }}
       </div>
-    </div>
+  </div>
 
     <!-- content end -->
 

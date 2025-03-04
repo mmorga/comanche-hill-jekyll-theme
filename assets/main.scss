@@ -1,8 +1,8 @@
 ---
 ---
 
-@import 'syntax-highlighting';
-@import 'bourbon/bourbon';
+@import "syntax-highlighting";
+@import "bourbon/bourbon";
 
 .cf {
   @include clearfix;
@@ -10,31 +10,32 @@
 
 $rs: 16px;
 
-$font-header: -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-$font-body: -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+$font-header: -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande",
+  sans-serif;
+$font-body: -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande",
+  sans-serif;
 
 // Theme colors
-$aside-color: #578bce;        // Blue
-$aside-background: #daecff;   // Light Blue
-$accent-color: #57ad68;       // Green
-$text-accent-color: #336e3b;  // Dark Green
+$aside-color: #578bce; // Blue
+$aside-background: #daecff; // Light Blue
+$accent-color: #57ad68; // Green
+$text-accent-color: #336e3b; // Dark Green
 
 // Gray scale
-$black:                 #000;
-$dark-gray:             #333332;  // Warm Charcoal
-$med-gray:              #666665;  // Pewter
-$light-gray:            #999;
-$meta-color:            #b3b3b1;  // Alluminum
-$headline-border:       #dededc;  // Bright Alluminum
-$code-border:           #e8e8e8;
-$code-background:       #eef;     // Eggshell Blue - kinda like $aside-background
+$black: #000;
+$dark-gray: #333332; // Warm Charcoal
+$med-gray: #666665; // Pewter
+$light-gray: #999;
+$meta-color: #b3b3b1; // Aluminum
+$headline-border: #dededc; // Bright Aluminum
+$code-border: #e8e8e8;
+$code-background: #eef; // Eggshell Blue - kinda like $aside-background
 $article-bottom-border: #f2f2f0;
-$white:                 #fff;
+$white: #fff;
 
-$bullet-1-color: #4675c4;  // Blue
-$bullet-2-color: #7188b8;  // Gray Blue
-$bullet-3-color: #6c6c6c;  // Gray pretty close to #666
-
+$bullet-1-color: #4675c4; // Blue
+$bullet-2-color: #7188b8; // Gray Blue
+$bullet-3-color: #6c6c6c; // Gray pretty close to #666
 
 @mixin respond-to($breakpoint) {
   @media only screen and (max-width: $breakpoint + px) {
@@ -58,7 +59,7 @@ main {
   font-size: 24px;
   line-height: 32px;
   margin: 0 0 10px 10px;
-  padding-left: .5em;
+  padding-left: 0.5em;
   width: 33%;
 
   p {
@@ -69,7 +70,7 @@ main {
 }
 
 body {
-  @include font-feature-settings('liga', 'dlig');
+  @include font-feature-settings("liga", "dlig");
   font-family: $font-body;
   -webkit-font-smoothing: antialiased;
   margin: 0;
@@ -82,7 +83,7 @@ body {
   background-size: cover;
   border-radius: 50%;
   border: 3px solid $white;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
   height: $rs * 7.5;
   left: 0px;
   overflow: hidden;
@@ -208,7 +209,7 @@ article {
   font-size: 28px;
   font-style: normal;
   font-weight: 700;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
   line-height: 1.1;
   margin: 0;
 
@@ -230,7 +231,7 @@ article {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
   line-height: 44px;
   padding: 0 1em;
   position: absolute;
@@ -242,8 +243,8 @@ article {
 
 // Not currently in templates
 .tag-articleimage .post-reading {
-  color: rgba(255, 255, 255, .9);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, .25), 0 0 1px rgba(0, 0, 0, .5);
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25), 0 0 1px rgba(0, 0, 0, 0.5);
 }
 
 .post-excerpt {
@@ -251,7 +252,7 @@ article {
   font-size: 20px;
   font-style: normal;
   font-weight: 300;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
   line-height: 1.3;
 }
 
@@ -318,7 +319,6 @@ article {
 .author-image {
   background-size: cover;
   border-radius: 100%;
-  display: inline-block;
   float: left;
   height: 30px;
   line-height: 30px;
@@ -337,7 +337,7 @@ article {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -370,17 +370,17 @@ article {
   .post-title {
     color: $white;
     font-size: 50px;
-    letter-spacing: -.04em;
+    letter-spacing: -0.04em;
     margin-bottom: 16px;
-    text-shadow: 0 1px 16px rgba(0, 0, 0, .5), 0 0 1px rgba(0, 0, 0, .5);
+    text-shadow: 0 1px 16px rgba(0, 0, 0, 0.5), 0 0 1px rgba(0, 0, 0, 0.5);
   }
 
   .post-meta-text {
-    color: rgba(255, 255, 255, .75);
-    text-shadow: 0 1px 4px rgba(0, 0, 0, .25), 0 0 1px rgba(0, 0, 0, .5);
+    color: rgba(255, 255, 255, 0.75);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25), 0 0 1px rgba(0, 0, 0, 0.5);
 
     a {
-      color: rgba(255, 255, 255, .75);
+      color: rgba(255, 255, 255, 0.75);
     }
 
     a:hover {
@@ -390,7 +390,7 @@ article {
 }
 
 .fa-angle-down {
-  color: rgba(255, 255, 255, .75);
+  color: rgba(255, 255, 255, 0.75);
   font-size: 32px;
   margin: 64px auto 0;
 
@@ -424,7 +424,7 @@ article {
   .post-title {
     color: $dark-gray;
     font-size: 50px;
-    letter-spacing: -.04em;
+    letter-spacing: -0.04em;
     margin-bottom: 16px;
   }
 
@@ -453,7 +453,7 @@ h6 {
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
   line-height: 1.3;
   margin: 0;
   margin-bottom: 1rem;
@@ -465,7 +465,7 @@ h1 {
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
   line-height: 1.2;
   margin-bottom: 1rem;
   margin-top: 0;
@@ -528,7 +528,7 @@ blockquote {
     border-left: 3px solid $accent-color;
     font-style: italic;
     font-weight: 400;
-    letter-spacing: .01rem;
+    letter-spacing: 0.01rem;
     margin-left: -26px;
     padding-bottom: 3px;
     padding-left: 20px;
@@ -542,13 +542,13 @@ blockquote {
   }
 
   cite:before {
-    content: '— ';
+    content: "— ";
   }
 }
 
 blockquote:before {
   color: $accent-color;
-  content: '“';
+  content: "“";
   display: block;
   font-size: 80px;
   left: 45px;
@@ -591,26 +591,26 @@ ul {
 
   li:before {
     background: $bullet-1-color;
-    content: '';
-    height: .5em;
+    content: "";
+    height: 0.5em;
     left: -1em;
     position: absolute;
-    top: .5em;
-    width: .5em;
+    top: 0.5em;
+    width: 0.5em;
   }
 
   ul {
     li:before {
       background: $bullet-2-color;
-      height: .25em;
-      top: .63em;
+      height: 0.25em;
+      top: 0.63em;
     }
 
     ul {
       li:before {
         background: $bullet-3-color;
-        left: -.75em;
-        width: .25em;
+        left: -0.75em;
+        width: 0.25em;
       }
     }
   }
@@ -621,7 +621,7 @@ ol li {
 }
 
 table {
-  @include font-feature-settings('tnum');
+  @include font-feature-settings("tnum");
   border-bottom: 2px solid $accent-color;
   border-collapse: separate;
   border-spacing: 0 5px;
@@ -775,13 +775,13 @@ table {
   .blog-title {
     color: $white;
     padding: 0 0 10px;
-    text-shadow: 0 1px 16px rgba(0, 0, 0, .5), 0 0 1px rgba(0, 0, 0, .5);
+    text-shadow: 0 1px 16px rgba(0, 0, 0, 0.5), 0 0 1px rgba(0, 0, 0, 0.5);
   }
 
   .blog-description {
     color: $white;
     margin: 0 0 50px;
-    text-shadow: 0 1px 16px rgba(0, 0, 0, .5), 0 0 1px rgba(0, 0, 0, .5);
+    text-shadow: 0 1px 16px rgba(0, 0, 0, 0.5), 0 0 1px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -796,7 +796,7 @@ table {
   font-style: normal;
   font-weight: 400;
   height: 44px;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
   line-height: 44px;
   padding: 0 18px;
   text-align: center;
@@ -833,13 +833,13 @@ pre {
 
 .img-float-right {
   float: right;
-  margin: .5em !important;
+  margin: 0.5em !important;
   max-width: 33% !important;
 }
 
 .img-float-left {
   float: left;
-  margin: .5em !important;
+  margin: 0.5em !important;
   max-width: 33% !important;
 }
 
@@ -850,7 +850,7 @@ pre {
   border: 1px solid $aside-color;
   display: block;
   margin: 0 2em 1em;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
 
   p:last-child {
     padding-bottom: 0 !important;
@@ -858,10 +858,10 @@ pre {
 
   p:first-child:before {
     color: $aside-color;
-    content: 'TL;DR';
+    content: "TL;DR";
     float: left;
     font-family: $font-header;
     font-size: 3em;
-    padding: .75rem 1rem .5rem .5rem;
+    padding: 0.75rem 1rem 0.5rem 0.5rem;
   }
 }

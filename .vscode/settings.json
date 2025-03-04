@@ -1,5 +1,15 @@
 {
   "cSpell.words": [
-    "disqus"
-  ]
+    "disqus",
+    "Emph",
+    "fitvids",
+    "noarticleimage",
+    "prependtoparent",
+    "pully",
+    "pullyquote",
+    "readium",
+    "SFNS",
+    "topofpage"
+  ],
+  "rubocop.mode": "enableViaGemfile"
 }

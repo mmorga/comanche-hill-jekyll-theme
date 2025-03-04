@@ -1,6 +1,10 @@
 ---
 AllCops:
   NewCops: enable
+  TargetRubyVersion: 2.7
+  Exclude:
+    - '_site/**/*'
+    - 'Gemfile.lock'
 
 Layout/LineLength:
   Max: 120

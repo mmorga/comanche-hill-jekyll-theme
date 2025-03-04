@@ -10,9 +10,13 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/mmorga/comanche-hill-jekyll-theme"
   spec.license       = "MIT"
 
-  spec.required_ruby_version = '>= 3.1'
+  spec.required_ruby_version     = ">= 2.7.0"
+  spec.required_rubygems_version = ">= 2.7.0"
+
   spec.metadata['rubygems_mfa_required'] = 'true'
-  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_includes|_sass|LICENSE|README)!i) }
+  spec.files = `git ls-files -z`.split("\x0").select do |f|
+    f.match(/^(assets|_layouts|_includes|_sass|LICENSE|README)/i)
+  end
 
   spec.add_dependency "jekyll", "~> 4.4"
 end
