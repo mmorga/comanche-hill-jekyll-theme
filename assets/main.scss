@@ -1,116 +1,5 @@
----
----
-
 @use 'sass:list';
 @use "syntax-highlighting" as *;
-
-// Font feature settings mixin and property default.
-// Examples: @include font-feature-settings("liga");
-//           @include font-feature-settings("lnum" false);
-//           @include font-feature-settings("pnum" 1, "kern" 0);
-//           @include font-feature-settings("ss01", "ss02");
-
-@mixin font-feature-settings($settings...) {
-  @if list.length($settings) == 0 { $settings: none; }
-  @include prefixer(font-feature-settings, $settings, webkit moz ms spec);
-}
-
-//************************************************************************//
-// Example: @include prefixer(border-radius, $radii, webkit ms spec);
-//************************************************************************//
-// Variables located in /settings/_prefixer.scss
-// Variable settings for /addons/prefixer.scss
-$prefix-for-webkit:    true !default;
-$prefix-for-mozilla:   true !default;
-$prefix-for-microsoft: true !default;
-$prefix-for-opera:     true !default;
-$prefix-for-spec:      true !default; // required for keyframe mixin
-
-@mixin prefixer ($property, $value, $prefixes) {
-  @each $prefix in $prefixes {
-    @if $prefix == webkit {
-      @if $prefix-for-webkit {
-        -webkit-#{$property}: $value;
-      }
-    }
-    @else if $prefix == moz {
-      @if $prefix-for-mozilla {
-        -moz-#{$property}: $value;
-      }
-    }
-    @else if $prefix == ms {
-      @if $prefix-for-microsoft {
-        -ms-#{$property}: $value;
-      }
-    }
-    @else if $prefix == o {
-      @if $prefix-for-opera {
-        -o-#{$property}: $value;
-      }
-    }
-    @else if $prefix == spec {
-      @if $prefix-for-spec {
-        #{$property}: $value;
-      }
-    }
-    @else  {
-      @warn "Unrecognized prefix: #{$prefix}";
-    }
-  }
-}
-
-@mixin disable-prefix-for-all() {
-  $prefix-for-webkit:    false !global;
-  $prefix-for-mozilla:   false !global;
-  $prefix-for-microsoft: false !global;
-  $prefix-for-opera:     false !global;
-  $prefix-for-spec:      false !global;
-}
-
-@mixin box-sizing ($box) {
-//  content-box | border-box | inherit
-  @include prefixer(box-sizing, $box, webkit moz spec);
-}
-
-@mixin hyphens($hyphenation: none) {
-// none | manual | auto
-  @include prefixer(hyphens, $hyphenation, webkit moz ms spec);
-}
-
-//************************************************************************//
-// Shorthand Border-radius mixins
-//************************************************************************//
-@mixin border-top-radius($radii) {
-  @include prefixer(border-top-left-radius, $radii, spec);
-  @include prefixer(border-top-right-radius, $radii, spec);
-}
-
-@mixin border-bottom-radius($radii) {
-  @include prefixer(border-bottom-left-radius, $radii, spec);
-  @include prefixer(border-bottom-right-radius, $radii, spec);
-}
-
-@mixin border-left-radius($radii) {
-  @include prefixer(border-top-left-radius, $radii, spec);
-  @include prefixer(border-bottom-left-radius, $radii, spec);
-}
-
-@mixin border-right-radius($radii) {
-  @include prefixer(border-top-right-radius, $radii, spec);
-  @include prefixer(border-bottom-right-radius, $radii, spec);
-}
-
-@mixin clearfix {
-  &:after {
-    content:"";
-    display:table;
-    clear:both;
-  }
-}
-
-.cf {
-  @include clearfix;
-}
 
 $rs: 16px;
 
@@ -142,8 +31,16 @@ $bullet-2-color: #7188b8; // Gray Blue
 $bullet-3-color: #6c6c6c; // Gray pretty close to #666
 
 @mixin respond-to($breakpoint) {
-  @media only screen and (max-width: $breakpoint + px) {
+  @media only screen and (max-width: $breakpoint) {
     @content;
+  }
+}
+
+.cf {
+  &:after {
+    content:"";
+    display:table;
+    clear:both;
   }
 }
 
@@ -174,7 +71,7 @@ main {
 }
 
 body {
-  @include font-feature-settings("liga", "dlig");
+  font-variant-ligatures: common-ligatures discretionary-ligatures;
   font-family: $font-body;
   -webkit-font-smoothing: antialiased;
   margin: 0;
@@ -236,14 +133,14 @@ body {
 }
 
 .blog-header {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
   margin: 0 auto;
   max-width: 640px;
   padding: 0;
   position: relative;
   width: 100%;
 
-  @include respond-to(800) {
+  @include respond-to(800px) {
     padding: 0 $rs;
   }
 
@@ -274,12 +171,12 @@ body {
 }
 
 .content {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
   margin: 0 auto;
   max-width: 640px;
   width: 100%;
 
-  @include respond-to(800) {
+  @include respond-to(800px) {
     padding: 0 ($rs * 2);
   }
 }
@@ -457,7 +354,7 @@ article {
   top: 0;
 
   .post-meta {
-    @include box-sizing(border-box);
+    box-sizing: border-box;
     bottom: $rs * 5;
     font-family: $font-body;
     left: 30%;
@@ -465,7 +362,7 @@ article {
     right: 30%;
     z-index: 9;
 
-    @include respond-to(800) {
+    @include respond-to(800px) {
       left: $rs;
       right: $rs;
     }
@@ -576,7 +473,7 @@ h1 {
 }
 
 p {
-  @include hyphens(auto);
+  hyphens: auto;
   color: $dark-gray;
   font-size: 22px;
   font-style: normal;
@@ -725,7 +622,7 @@ ol li {
 }
 
 table {
-  @include font-feature-settings("tnum");
+  font-feature-settings: "tnum";
   border-bottom: 2px solid $accent-color;
   border-collapse: separate;
   border-spacing: 0 5px;
@@ -764,11 +661,11 @@ table {
 }
 
 .is-left {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
   float: left;
   width: 47%;
 
-  @include respond-to(800) {
+  @include respond-to(800px) {
     padding-bottom: $rs * 2;
     width: 100%;
   }
@@ -817,11 +714,11 @@ table {
 }
 
 .is-right {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
   float: right;
   width: 47%;
 
-  @include respond-to(800) {
+  @include respond-to(800px) {
     width: 100%;
   }
 
@@ -948,8 +845,11 @@ pre {
 }
 
 .tldr {
-  @include border-top-radius(5px);
-  @include border-bottom-radius(5px);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
   background-color: $aside-background;
   border: 1px solid $aside-color;
   display: block;
