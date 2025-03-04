@@ -1,5 +1,7 @@
-*.gem
+_site/
 .bundle
+.jekyll-cache/
+.ruby-lsp/
 .sass-cache
-_site
+*.gem
 Gemfile.lock
